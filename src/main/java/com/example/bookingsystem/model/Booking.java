@@ -24,11 +24,11 @@ public class Booking {
     private Long totalPrice;
 
     @Indexed
-    private String bookingStatus;
+    private BookingStatus bookingStatus;
     
     public Booking() {}
 
-    public Booking(String userId, String eventId, Integer numberOfSeats, LocalDateTime bookingDate, Long totalPrice, String bookingStatus) {
+    public Booking(String userId, String eventId, Integer numberOfSeats, LocalDateTime bookingDate, Long totalPrice, BookingStatus bookingStatus) {
         this.userId = userId;
         this.eventId = eventId;
         this.numberOfSeats = numberOfSeats;
@@ -85,11 +85,11 @@ public class Booking {
         this.totalPrice = totalPrice;
     }
 
-    public String getBookingStatus() {
+    public BookingStatus getBookingStatus() {
         return bookingStatus;
     }
 
-    public void setBookingStatus(String bookingStatus) {
+    public void setBookingStatus(BookingStatus bookingStatus) {
         this.bookingStatus = bookingStatus;
     }
 }
