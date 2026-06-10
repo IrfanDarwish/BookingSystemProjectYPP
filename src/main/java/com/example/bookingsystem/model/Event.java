@@ -28,7 +28,7 @@ public class Event {
     @Indexed
     private LocalDateTime eventDate;
 
-    private String price;
+    private Long price;
 
     private Integer capacity;
 
@@ -41,7 +41,7 @@ public class Event {
     
     public Event() {}
 
-    public Event(String title, String description, String category, String venue, LocalDateTime eventDate, String price, Integer capacity, Integer seatsAvailable, String status) {
+    public Event(String title, String description, String category, String venue, LocalDateTime eventDate, Long price, Integer capacity, Integer seatsAvailable, String status) {
         this.title = title;
         this.description = description;
         this.category = category;
@@ -102,11 +102,11 @@ public class Event {
         this.eventDate = eventDate;
     }
 
-    public String getPrice() {
+    public Long getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(Long price) {
         this.price = price;
     }
 
