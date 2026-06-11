@@ -24,3 +24,29 @@ export const loginUser = async (email, password) => {
     }
     return data;
 }
+
+export const registerUser = async (name, email, password) => {
+    const response = await fetch(`${API_AUTH_URL}/register`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            fullName: name, 
+            email: email, 
+            password: password })
+    });
+
+    const data = await response.json();
+    
+    if(!response.ok){
+        const error = new Error(data.error || 'Registration failed');
+        error.status = response.status;
+
+        if(data.errors) {
+            error.errors = data.errors;
+        }
+        throw error;
+    }
+    return data;
+}
