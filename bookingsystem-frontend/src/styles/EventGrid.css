@@ -1,0 +1,27 @@
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* laptop */
+@media (max-width: 1400px) {
+    .event-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* tablet */
+@media (max-width: 1000px) {
+    .event-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* mobile */
+@media (max-width: 600px) {
+    .event-grid {
+        grid-template-columns: 1fr;
+    }
+}

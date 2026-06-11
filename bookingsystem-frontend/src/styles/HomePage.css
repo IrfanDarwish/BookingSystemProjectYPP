@@ -1,0 +1,82 @@
+.hero-section {
+    min-height: auto;        
+    padding: 40px 0 20px;    
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 60px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    color: #e5e7eb;
+    margin-top: 0;
+}
+
+.hero-buttons {
+    margin-top: 20px;
+}
+
+.section {
+    margin-top: 40px;        
+    text-align: center;
+}
+
+.section-title {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.12);
+    padding: 20px;
+    border-radius: 12px;
+    color: rgb(252, 18, 18);
+    backdrop-filter: blur(10px);
+}
+
+.event-card {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 20px;
+    border-radius: 12px;
+    color: white;
+}
+
+.primary-btn, .secondary-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.primary-btn {
+    background: #4f46e5;
+    color: white;
+    margin-right: 10px;
+}
+
+.secondary-btn {
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+}
+
+.cta-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.cta-title {
+    color: white;
+    font-size: 32px;
+}
