@@ -18,7 +18,7 @@ function LoginPage() {
             localStorage.setItem('token', data.token);
             localStorage.setItem('email', data.email);
             localStorage.setItem('role', data.role);
-            navigate('/dashboard');
+            navigate('/events');
         } catch (err) {
             setError(err.message);
         } finally {
@@ -28,21 +28,30 @@ function LoginPage() {
 
     return (
         <div className="login-container">
-            <div className="card">
-                <div className="card-body">
-                    <div className="card-header">
+            <div className="login-card">
+                <div className="login-card-body">
+                    <div className="login-card-header">
                         <h1>Login</h1>
                         <p>Login to your account and make bookings now!</p>
+                    </div>
 
-                    </div>
-                    <div className="form-group">
-                        <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                        <button onClick={handleLogin} disabled={loading}>
-                            {loading ? 'Loading...' : 'Login'}
-                        </button>
-                        {error && <div className="error">{error}</div>}
-                    </div>
+                    {error && <p className="error-message">{error}</p>}
+
+                    <form 
+                        onSubmit={(e) => {
+                            e.preventDefault();
+                            handleLogin();
+                        }}
+                        >
+                            <div className="form-group">
+                                <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                                <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                                <button type="submit" className="login-submit-btn" disabled={loading}>
+                                    {loading ? 'Logging in...' : 'Login'}
+                                </button>
+                            </div>
+                        </form>
+                    
                 </div>
             </div>
         </div>

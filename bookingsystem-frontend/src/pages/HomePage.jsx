@@ -1,91 +1,60 @@
+import "../styles/HomePage.css";
+
 function HomePage() {
     return (
         <div className="page">
-
-            {/* HERO SECTION */}
-            <div id="center" style={{ textAlign: "center", marginBottom: "40px" }}>
-                <h1 style={{ fontSize: "48px", color: "white" }}>
-                    GoEvent
-                </h1>
-
-                <h3 style={{ color: "#e5e7eb", marginTop: "10px" }}>
-                    Book events easily, manage everything in one place
-                </h3>
-
-                <div style={{ marginTop: "20px" }}>
-                    <button style={btnPrimary}>Browse Events</button>
-                    <button style={btnSecondary}>Login</button>
-                </div>
+        {/* HERO SECTION */}
+        <section className="hero-section">
+            <h1 className="hero-title">GoEvent</h1>
+            <p className="hero-subtitle">
+            The easiest way to discover, book, and manage events in one place.
+            </p>
+            <div className="hero-buttons">
+            <button className="primary-btn">Get Started</button>
+            <button className="secondary-btn">Browse Events</button>
             </div>
+        </section>
 
-            {/* QUICK ACTIONS */}
-            <div style={{ marginBottom: "40px" }}>
-                <h2 style={{ color: "white", marginBottom: "16px" }}>
-                    Quick Actions
-                </h2>
-
-                <div style={grid}>
-                    <div style={card}>🎟 Browse Events</div>
-                    <div style={card}>🔍 Search Events</div>
-                </div>
+        {/* FEATURES */}
+        <section className="section">
+            <h2 className="section-title">Why GoEvent?</h2>
+            <div className="grid">
+            <div className="card">⚡ Fast Booking</div>
+            <div className="card">🎟 Instant Tickets</div>
+            <div className="card">📅 Easy Event Management</div>
+            <div className="card">🔒 Secure System</div>
             </div>
+        </section>
 
-            <div>
-                <h2 style={{ color: "white", marginBottom: "16px" }}>
-                    Featured Events
-                </h2>
-
-                <div style={grid}>
-                    <div style={eventCard}>Tech Conference 2026</div>
-                    <div style={eventCard}>Music Festival</div>
-                    <div style={eventCard}>Startup Meetup</div>
-                </div>
+        {/* HOW IT WORKS */}
+        <section className="section">
+            <h2 className="section-title">How It Works</h2>
+            <div className="grid">
+            <div className="card">1. Browse Events</div>
+            <div className="card">2. Book Your Seat</div>
+            <div className="card">3. Get Confirmation</div>
             </div>
+        </section>
 
+        {/* PREVIEW EVENTS */}
+        <section className="section">
+            <h2 className="section-title">Popular Events</h2>
+            <div className="grid">
+            <div className="event-card">🔥 Tech Conference 2026</div>
+            <div className="event-card">🎶 Music Festival</div>
+            <div className="event-card">🚀 Startup Meetup</div>
+            </div>
+        </section>
+
+        {/* FINAL CTA */}
+        <section className="cta-section">
+            <h2 className="cta-title">Ready to join amazing events?</h2>
+            <button className="primary-btn" style={{ marginTop: "20px" }}>
+            Sign Up Now
+            </button>
+        </section>
         </div>
     );
 }
 
 export default HomePage;
-
-const grid = {
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-    gap: "16px"
-};
-
-const card = {
-    background: "rgba(255,255,255,0.15)",
-    padding: "20px",
-    borderRadius: "12px",
-    color: "white",
-    cursor: "pointer",
-    textAlign: "center",
-    backdropFilter: "blur(10px)"
-};
-
-const eventCard = {
-    background: "rgba(255,255,255,0.1)",
-    padding: "20px",
-    borderRadius: "12px",
-    color: "white"
-};
-
-const btnPrimary = {
-    padding: "10px 20px",
-    marginRight: "10px",
-    border: "none",
-    borderRadius: "8px",
-    background: "#4f46e5",
-    color: "white",
-    cursor: "pointer"
-};
-
-const btnSecondary = {
-    padding: "10px 20px",
-    border: "1px solid white",
-    borderRadius: "8px",
-    background: "transparent",
-    color: "white",
-    cursor: "pointer"
-};

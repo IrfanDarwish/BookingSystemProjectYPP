@@ -21,8 +21,8 @@ function Navbar() {
             <div className="nav-container">
                 <div className="nav-brand">Booking Event System</div>
                 <div className="nav-menu">
-                    <Link to="/dashboard">Dashboard</Link>
                     <Link to="/events">Events</Link>
+                    <Link to="/dashboard">Dashboard</Link>
                     {token ? (
                         <button onClick={handleLogout}>Logout</button>
                     ) : (

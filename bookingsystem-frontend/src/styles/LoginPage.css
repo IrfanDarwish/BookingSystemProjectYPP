@@ -1,56 +1,76 @@
+/* =========================
+   LOGIN PAGE
+========================= */
+
 .login-container {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     width: 100%;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     padding: 1rem;
     box-sizing: border-box;
+    /* No extra background — uses global gradient */
 }
 
-.card {
+/* =========================
+   CARD — Glassmorphic (same as register)
+========================= */
+
+.login-card {
     max-width: 440px;
     width: 100%;
-    background: white;
-    border-radius: 32px;
-    box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.25);
-    transition: transform 0.2s ease;
+    background: rgba(20, 25, 45, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 28px;
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     overflow: hidden;
+    
 }
 
-.card:hover {
-    transform: translateY(-4px);
+.login-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 28px 48px -15px rgba(0, 0, 0, 0.4);
 }
 
-.card-body {
+.login-card-body {
     padding: 2rem 1.8rem 2.2rem;
 }
 
-/* Header inside card */
-.card-header {
+/* =========================
+   HEADER
+========================= */
+
+.login-card-header {
     text-align: center;
     margin-bottom: 2rem;
 }
 
-.card-header h1 {
+.login-card-header h1 {
     font-size: 2rem;
     font-weight: 700;
-    background: linear-gradient(120deg, #667eea, #764ba2);
+    background: linear-gradient(120deg, #ffffff, #e0d4ff);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
     margin-bottom: 0.4rem;
     letter-spacing: -0.3px;
     line-height: 1.5;
+    margin-top: 0;
 }
 
-.card-header p {
-    color: #6b7280;
+.login-card-header p {
+    color: rgba(255, 255, 255, 0.8);
     font-size: 0.9rem;
 }
 
-/* Form elements */
+/* =========================
+   FORM — High Contrast Inputs
+========================= */
+
 .form-group {
     display: flex;
     flex-direction: column;
@@ -62,27 +82,31 @@
     padding: 0.9rem 1rem;
     font-size: 0.95rem;
     font-family: inherit;
-    border: 1.5px solid #e2e8f0;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 20px;
-    background-color: #f9fafb;
+    background: rgba(0, 0, 0, 0.45);
+    color: white;
     transition: all 0.2s ease;
     outline: none;
-    color: #1f2937;
     box-sizing: border-box;
 }
 
 .form-group input:focus {
-    border-color: #667eea;
-    background-color: white;
-    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+    border-color: #a78bfa;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 0 4px rgba(167, 139, 250, 0.3);
 }
 
 .form-group input::placeholder {
-    color: #9ca3af;
+    color: rgba(255, 255, 255, 0.6);
 }
 
-.form-group button {
-    background: linear-gradient(105deg, #667eea 0%, #764ba2 100%);
+/* =========================
+   BUTTON
+========================= */
+
+.login-submit-btn {
+    background: linear-gradient(105deg, #8b5cf6 0%, #6d28d9 100%);
     color: white;
     border: none;
     padding: 0.9rem;
@@ -92,30 +116,37 @@
     border-radius: 40px;
     cursor: pointer;
     transition: all 0.25s ease;
-    margin-top: 0.4rem;
-    box-shadow: 0 8px 18px -6px rgba(102, 126, 234, 0.4);
+    margin-top: 0.6rem;
+    box-shadow: 0 8px 18px -6px rgba(109, 40, 217, 0.5);
 }
 
-.form-group button:hover:not(:disabled) {
-    transform: scale(1.01);
-    background: linear-gradient(105deg, #5a6fd8 0%, #6a4190 100%);
-    box-shadow: 0 12px 22px -8px rgba(102, 126, 234, 0.5);
+.login-submit-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    background: linear-gradient(105deg, #7c3aed 0%, #5b21b6 100%); /* darker purple */
+    box-shadow: 0 12px 24px -8px rgba(109, 40, 217, 0.7);
 }
 
-.form-group button:active:not(:disabled) {
-    transform: scale(0.98);
+.login-submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
 }
 
-.error {
-    background-color: #fee2e2;
-    color: #b91c1c;
+/* =========================
+   ERROR MESSAGE
+========================= */
+
+.error-message {
+    background-color: rgba(239, 68, 68, 0.2);
+    backdrop-filter: blur(4px);
+    color: #ffc9c9;
     padding: 0.75rem 1rem;
-    border-radius: 18px;
+    border-radius: 20px;
     font-size: 0.85rem;
     font-weight: 500;
     text-align: center;
     border-left: 4px solid #ef4444;
     animation: shake 0.3s ease-in-out 0s 2;
+    margin-bottom: 0.5rem;
 }
 
 @keyframes shake {
@@ -124,7 +155,10 @@
     75% { transform: translateX(5px); }
 }
 
-/* Responsive */
+/* =========================
+   RESPONSIVE
+========================= */
+
 @media (max-width: 480px) {
     .card-body {
         padding: 1.6rem 1.2rem 1.8rem;
