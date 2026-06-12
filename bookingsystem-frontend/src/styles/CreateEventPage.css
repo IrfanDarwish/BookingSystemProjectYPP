@@ -1,0 +1,197 @@
+/* =========================
+   CREATE EVENT PAGE
+========================= */
+
+.create-event-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+/* =========================
+   CARD (same glassmorphism style)
+========================= */
+
+.create-event-card {
+    width: 100%;
+    max-width: 550px;
+    background: rgba(20, 25, 45, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 28px;
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.35);
+    transition: transform 0.2s ease;
+}
+
+.create-event-card:hover {
+    transform: translateY(-3px);
+}
+
+.create-event-card-body {
+    padding: 2rem;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.create-event-card-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.create-event-card-header h1 {
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.create-event-card-header p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-left: 0.25rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 18px;
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.25s ease;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    border-color: #a78bfa;
+    background: rgba(0, 0, 0, 0.55);
+    box-shadow: 0 0 0 4px rgba(167, 139, 250, 0.3);
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.create-event-btn {
+    width: 100%;
+    background: linear-gradient(105deg, #8b5cf6 0%, #6d28d9 100%);
+    color: white;
+    border: none;
+    padding: 0.9rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 8px 18px -6px rgba(109, 40, 217, 0.5);
+}
+
+.create-event-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    background: linear-gradient(105deg, #7c3aed 0%, #5b21b6 100%);
+}
+
+.create-event-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* =========================
+   ALERTS (reuse same style)
+========================= */
+
+.success-message {
+    margin-bottom: 1rem;
+    padding: 0.9rem;
+    border-radius: 18px;
+    background: rgba(34, 197, 94, 0.2);
+    border: 1px solid rgba(34, 197, 94, 0.5);
+    color: #dcfce7;
+    text-align: center;
+}
+
+.error-message {
+    margin-bottom: 1rem;
+    padding: 0.9rem;
+    border-radius: 18px;
+    background: rgba(239, 68, 68, 0.2);
+    border: 1px solid rgba(239, 68, 68, 0.5);
+    color: #fee2e2;
+    text-align: center;
+}
+
+
+/* Style for select dropdown to match inputs */
+.form-group select {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 18px;
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.25s ease;
+    box-sizing: border-box;
+    appearance: none; 
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1rem;
+    cursor: pointer;
+}
+
+.form-group select:focus {
+    border-color: #a78bfa;
+    background: rgba(0, 0, 0, 0.55);
+    box-shadow: 0 0 0 4px rgba(167, 139, 250, 0.3);
+}
+
+/* Optional: style dropdown options inside the select */
+.form-group select option {
+    background: #1e1a2f;
+    color: white;
+}
+
+.form-group input[type="datetime-local"] {
+    color-scheme: dark;
+    color: white;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 576px) {
+    .create-event-card {
+        max-width: 100%;
+    }
+
+    .create-event-card-body {
+        padding: 1.5rem;
+    }
+}
