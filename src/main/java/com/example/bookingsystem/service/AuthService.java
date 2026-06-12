@@ -39,6 +39,7 @@ public class AuthService {
         userRepository.save(user);
     }
 
+
     public AuthResponse loginUser(LoginRequest logRequest) {
         User user = userRepository.findByEmail(logRequest.getEmail())
             .orElseThrow(() -> new ResponseStatusException(HttpStatus.UNAUTHORIZED, "User not found"));
