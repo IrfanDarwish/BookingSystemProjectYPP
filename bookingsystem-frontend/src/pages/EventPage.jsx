@@ -1,68 +1,28 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SearchBar from "../components/SearchBar";
 import EventGrid from "../components/EventGrid";
+import { getAllEvents } from "../services/eventApi";
 
 function EventPage() {
-
+    const [events, setEvents] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
+    const [loading, setLoading] = useState('');
+    const [error, setError] = useState('');
 
-    const events = [
-        {
-            id: 1,
-            title: "Tech Conference",
-            venue: "KLCC",
-            eventDate: "2026-07-01",
-            price: 100,
-            capacity: 200,
-            seatsAvailable: 50,
-            status: "active",
-            imgUrl: ""
-        },
-        {
-            id: 2,
-            title: "Laptop Conference",
-            venue: "KLCC",
-            eventDate: "2026-07-01",
-            price: 100,
-            capacity: 200,
-            seatsAvailable: 50,
-            status: "active",
-            imgUrl: ""
-        },
-        {
-            id: 3,
-            title: "AI Conference",
-            venue: "KLCC",
-            eventDate: "2026-07-01",
-            price: 100,
-            capacity: 200,
-            seatsAvailable: 50,
-            status: "active",
-            imgUrl: ""
-        },
-        {
-            id: 4,
-            title: "Medical Conference",
-            venue: "KLCC",
-            eventDate: "2026-07-01",
-            price: 100,
-            capacity: 200,
-            seatsAvailable: 50,
-            status: "active",
-            imgUrl: ""
-        },
-        {
-            id: 5,
-            title: "HEHE Conference",
-            venue: "KLCC",
-            eventDate: "2026-07-01",
-            price: 100,
-            capacity: 200,
-            seatsAvailable: 50,
-            status: "active",
-            imgUrl: ""
-        },
-    ]
+    useEffect(() => {
+        async function loadEvents() {
+            try {
+                setLoading(true);
+                const data = await getAllEvents();
+                setEvents(data);
+            } catch (err) {
+                setError("Failed to load events");
+            } finally {
+                setLoading(false);
+            }
+        }
+        loadEvents();
+    }, []);
 
     const filteredEvents = searchTerm ? events.filter(event => event.title.toLowerCase().includes(searchTerm.toLowerCase())) : events;
 
