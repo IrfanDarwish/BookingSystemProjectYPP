@@ -1,6 +1,5 @@
 .event-card {
     width: 100%;
-    max-width: 300px;
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(12px);
     border-radius: 16px;
