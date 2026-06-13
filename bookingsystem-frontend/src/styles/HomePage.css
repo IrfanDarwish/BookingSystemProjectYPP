@@ -1,82 +1,286 @@
-.hero-section {
-    min-height: auto;        
-    padding: 40px 0 20px;    
+/* =========================
+   MAIN
+========================= */
+
+.goevent-homepage {
+    min-height: 100vh;
+    background: #f8fafc;
+    color: #1e293b;
+    overflow-x: hidden;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.goevent-hero {
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    padding: 80px 20px;
+
+    background: linear-gradient(
+        135deg,
+        #667eea 0%,
+        #764ba2 100%
+    );
+
+    color: white;
 }
 
-.hero-title {
-    font-size: 60px;
-    color: white;
+.goevent-hero-content {
+    max-width: 900px;
+}
+
+.goevent-hero-title {
+    font-size: 4rem;
+    font-weight: 800;
     margin-bottom: 20px;
+    line-height: 1.1;
 }
 
-.hero-subtitle {
-    font-size: 18px;
-    color: #e5e7eb;
-    margin-top: 0;
+.goevent-hero-subtitle {
+    font-size: 1.3rem;
+    opacity: 0.9;
+    margin-bottom: 40px;
 }
 
-.hero-buttons {
-    margin-top: 20px;
+.goevent-hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-.section {
-    margin-top: 40px;        
-    text-align: center;
-}
+/* =========================
+   BUTTONS
+========================= */
 
-.section-title {
-    color: white;
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 16px;
-}
-
-.card {
-    background: rgba(255, 255, 255, 0.12);
-    padding: 20px;
-    border-radius: 12px;
-    color: rgb(252, 18, 18);
-    backdrop-filter: blur(10px);
-}
-
-.event-card {
-    background: rgba(255, 255, 255, 0.08);
-    padding: 20px;
-    border-radius: 12px;
-    color: white;
-}
-
-.primary-btn, .secondary-btn {
-    padding: 12px 24px;
+.goevent-primary-btn {
     border: none;
-    border-radius: 8px;
+    padding: 15px 32px;
+    border-radius: 12px;
     cursor: pointer;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    background: white;
+    color: #667eea;
+
+    transition: 0.3s;
 }
 
-.primary-btn {
-    background: #4f46e5;
-    color: white;
-    margin-right: 10px;
+.goevent-primary-btn:hover {
+    transform: translateY(-3px);
 }
 
-.secondary-btn {
-    border: 1px solid white;
+.goevent-secondary-btn {
+    border: 2px solid white;
     background: transparent;
     color: white;
+
+    padding: 15px 32px;
+    border-radius: 12px;
+    cursor: pointer;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    transition: 0.3s;
 }
 
-.cta-section {
-    padding: 60px 0;
+.goevent-secondary-btn:hover {
+    background: white;
+    color: #667eea;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+.goevent-section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.goevent-section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.goevent-dark-section {
+    background: #eef2ff;
+    max-width: 100%;
+}
+
+/* =========================
+   FEATURES
+========================= */
+
+.goevent-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.goevent-feature-card {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+
+    transition: 0.3s;
+}
+
+.goevent-feature-card:hover {
+    transform: translateY(-8px);
+}
+
+.goevent-feature-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+/* =========================
+   HOW IT WORKS
+========================= */
+
+.goevent-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.goevent-step-card {
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
     text-align: center;
 }
 
-.cta-title {
+.goevent-step-card span {
+    width: 60px;
+    height: 60px;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: #667eea;
     color: white;
-    font-size: 32px;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.goevent-stats {
+    background: white;
+
+    padding: 60px 20px;
+
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    flex-wrap: wrap;
+
+    text-align: center;
+}
+
+.goevent-stat-item h2 {
+    font-size: 3rem;
+    color: #667eea;
+}
+
+.goevent-stat-item p {
+    font-size: 1rem;
+    color: #64748b;
+}
+
+/* =========================
+   EVENTS
+========================= */
+
+.goevent-event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    gap: 25px;
+}
+
+.goevent-event-card {
+    background: white;
+    padding: 30px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+
+    transition: 0.3s;
+}
+
+.goevent-event-card:hover {
+    transform: translateY(-8px);
+}
+
+/* =========================
+   CTA
+========================= */
+
+.goevent-cta {
+    text-align: center;
+    padding: 100px 20px;
+
+    background: linear-gradient(
+        135deg,
+        #667eea 0%,
+        #764ba2 100%
+    );
+
+    color: white;
+}
+
+.goevent-cta h2 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+}
+
+.goevent-cta p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .goevent-hero-title {
+        font-size: 2.7rem;
+    }
+
+    .goevent-section-title {
+        font-size: 2rem;
+    }
+
+    .goevent-cta h2 {
+        font-size: 2rem;
+    }
 }
