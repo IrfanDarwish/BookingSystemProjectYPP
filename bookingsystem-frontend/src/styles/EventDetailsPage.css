@@ -38,20 +38,26 @@
     font-size: 24px;
     text-transform: capitalize;
     font-weight: 600;
-    color:#ffffff;
+    color: #ffffff;
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* ACTIVE STATUS */
 .status-details.active {
-    background: rgb(65, 179, 65);
-    
+    background: rgb(65, 179, 65);  /* solid green */
+    color: #ffffff;
 }
 
 /* OPTIONAL: other statuses */
-.status-details.inactive {
-    background: rgba(255, 0, 0, 0.1);
-    color: #ff4d4d;
+.status-details.upcoming {
+    background: #17a2b8;  /* teal/blue */
+    color: #ffffff;
+}
+
+.status-details.cancelled {
+    background: rgba(255, 0, 0, 0.1);  /* light red transparent */
+    color: #ff4d4d;                    /* bright red text */
+    border: 1px solid rgba(255, 77, 77, 0.3);
 }
 
 /* =========================
@@ -63,7 +69,7 @@
     gap: 20px;
     font-size: 16px;
     width: fit-content;
-    background: rgba(255, 255, 255, 0.15);    
+    background: rgba(255, 255, 255, 0.15);
     padding: 25px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -91,7 +97,7 @@
 
 .event-description-details {
     width: 100%;
-    background: rgba(255, 255, 255, 0.15);    
+    background: rgba(255, 255, 255, 0.15);
     padding: 25px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -155,7 +161,7 @@
 }
 
 /* =========================
-   REGISTER BUTTON
+   REGISTER BUTTON (PURPLE)
 ========================= */
 
 .register-btn {
@@ -175,6 +181,75 @@
 
 .register-btn:hover {
     background: #574fd6;
+    transform: scale(1.02);
+}
+
+.register-btn:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.register-btn.disabled {
+    background-color: #d9534f;
+    color: white;
+}
+
+/* =========================
+   ADMIN BUTTONS CONTAINER
+========================= */
+
+.admin-buttons {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.admin-buttons button {
+    flex: 1;
+}
+
+/* =========================
+   EDIT BUTTON (GRAY)
+========================= */
+
+.edit-btn {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    background: #6c757d;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.edit-btn:hover {
+    background: #5a6268;
+    transform: scale(1.02);
+}
+
+/* =========================
+   DELETE BUTTON (RED)
+========================= */
+
+.delete-btn {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    background: #dc3545;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.delete-btn:hover {
+    background: #c82333;
     transform: scale(1.02);
 }
 
@@ -200,5 +275,11 @@
     .event-meta {
         flex-direction: column;
         gap: 10px;
+    }
+
+    /* Stack admin buttons vertically on small screens */
+    .admin-buttons {
+        flex-direction: column;
+        gap: 12px;
     }
 }

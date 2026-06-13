@@ -29,6 +29,11 @@
     color: white;
 }
 
+.event-content b {
+    color: #ececec;
+    font-weight: 800;
+}
+
 .event-title {
     font-size: 17px;
     font-weight: 600;
@@ -79,17 +84,26 @@
     text-transform: capitalize;
 }
 
-/* STATUS COLORS */
+/* ACTIVE STATUS */
 .event-status.active {
-    background: rgba(0, 255, 128, 0.15);
-    color: #2dff9b;
+    background: rgb(65, 179, 65);  /* solid green */
+    color: #ffffff;
 }
 
-.event-status.closed {
-    background: rgba(255, 0, 0, 0.15);
-    color: #ff6b6b;
+/* OPTIONAL: other statuses */
+.event-status.upcoming {
+    background: #17a2b8;  /* teal/blue */
+    color: #ffffff;
 }
 
-.event-status.ongoing {
-    color: #ffd166;
+.event-status.cancelled {
+    background: rgba(255, 0, 0, 0.1);  /* light red transparent */
+    color: #ff4d4d;                    /* bright red text */
+    border: 1px solid rgba(255, 77, 77, 0.3);
+}
+
+.event-status.completed {
+    background: rgba(2, 12, 148, 0.3);  /* light red transparent */
+    color: #ffffff;                    /* bright red text */
+    border: 1px solid rgba(2, 12, 148, 0.3);
 }
