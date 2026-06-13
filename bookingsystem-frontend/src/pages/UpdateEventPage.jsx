@@ -1,4 +1,3 @@
-// src/pages/UpdateEventPage.jsx
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getEventById, updateEvent, cancelEvent } from '../services/eventApi';
