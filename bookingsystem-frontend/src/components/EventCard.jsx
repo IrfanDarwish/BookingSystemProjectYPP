@@ -9,25 +9,20 @@ function EventCard({event}) {
         navigate(`/events/${event.id}`);
     };
     
-    
-    
+    const formattedDate = new Date(event.eventDate).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" }); 
     return (
         <div className="event-card" onClick={handleClick}>
-            <div className="event-image">
-                
-            </div>
-
             <div className="event-content">
                 <h3 className="event-title">{event.title}</h3>
                 <p className="event-description">{event.description}</p>
                 <p className="event-venue">📍 {event.venue}</p>
-                <p className="event-date">📅 {event.eventDate}</p>
-                <p className="event-price">💰 RM {event.price}</p>
-                <p className="event-capacity">👥{event.capacity}</p>
+                <p className="event-date">📅 {formattedDate}</p>
+                <p className="event-price"><b>Price:</b> RM {event.price}</p>
+                <p className="event-capacity"><b>Capacity:</b> {event.capacity}</p>
             </div>
 
             <div className="event-footer">
-                <p>🎟 {event.seatsAvailable} left</p>
+                <p>Available Seats: {event.seatsAvailable} left</p>
                 <p className={`event-status ${event.status?.toLowerCase()}`}>
                     {event.status}
                 </p>
