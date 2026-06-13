@@ -1,0 +1,44 @@
+.event-page{
+    padding: 40px 20px;
+    background: linear-gradient(135deg, rgba(102,126,234,0.15), rgba(118,75,162,0.15));
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.event-page-header{
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, rgba(102,126,234,0.15), rgba(118,75,162,0.15));
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.event-page-header h1{
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: -0.5px;
+    margin-bottom: 0;
+    color: #e8eaff;
+}
+
+.event-page-header p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    .pagination {
+        gap: 5px;
+    }
+
+    .page-btn {
+        padding: 6px 10px;
+        font-size: 13px;
+    }
+}
