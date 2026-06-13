@@ -21,14 +21,14 @@ public class Booking {
 
     private LocalDateTime bookingDate;
 
-    private Long totalPrice;
+    private Double totalPrice;
 
     @Indexed
     private BookingStatus bookingStatus;
     
     public Booking() {}
 
-    public Booking(String userId, String eventId, Integer numberOfSeats, LocalDateTime bookingDate, Long totalPrice, BookingStatus bookingStatus) {
+    public Booking(String userId, String eventId, Integer numberOfSeats, LocalDateTime bookingDate, Double totalPrice, BookingStatus bookingStatus) {
         this.userId = userId;
         this.eventId = eventId;
         this.numberOfSeats = numberOfSeats;
@@ -77,11 +77,11 @@ public class Booking {
         this.bookingDate = bookingDate;
     }
 
-    public Long getTotalPrice() {
+    public Double getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(Long totalPrice) {
+    public void setTotalPrice(Double totalPrice) {
         this.totalPrice = totalPrice;
     }
 

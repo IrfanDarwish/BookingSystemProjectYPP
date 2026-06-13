@@ -3,6 +3,7 @@ package com.example.bookingsystem.dto;
 import java.time.LocalDateTime;
 
 import com.example.bookingsystem.model.BookingStatus;
+import com.example.bookingsystem.model.EventStatus;
 
 public class BookingResponse {
 
@@ -10,19 +11,26 @@ public class BookingResponse {
     private String eventId;
     private String eventTitle;
     private Integer numberOfSeats;
-    private Long totalPrice;
+    private Double totalPrice;
     private LocalDateTime bookingDate;
     private BookingStatus bookingStatus;
+    private String userEmail;
+    private String eventVenue;
+    private EventStatus eventStatus;
 
     public BookingResponse() {}
 
-    public BookingResponse(String bookingId, String eventId, String eventTitle , Integer numberOfSeats, Long totalPrice, LocalDateTime bookingDate, BookingStatus bookingStatus) {
+    public BookingResponse(String bookingId, String eventId, String eventTitle , Integer numberOfSeats, Double totalPrice, LocalDateTime bookingDate, BookingStatus bookingStatus, String userEmail, String eventVenue, EventStatus eventStatus) {
         this.bookingId = bookingId;
         this.eventId = eventId;
         this.numberOfSeats = numberOfSeats;
         this.totalPrice = totalPrice;
         this.bookingDate = bookingDate;
         this.bookingStatus = bookingStatus;
+        this.userEmail = userEmail;
+        this.eventTitle = eventTitle;
+        this.eventVenue = eventVenue;
+        this.eventStatus = eventStatus;
     }
 
     public String getBookingId() {
@@ -49,11 +57,11 @@ public class BookingResponse {
         this.numberOfSeats = numberOfSeats;
     }
 
-    public Long getTotalPrice() {
+    public Double getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(Long totalPrice) {
+    public void setTotalPrice(Double totalPrice) {
         this.totalPrice = totalPrice;
     }
 
@@ -72,5 +80,36 @@ public class BookingResponse {
     public void setBookingStatus(BookingStatus bookingStatus) {
         this.bookingStatus = bookingStatus;
     }
+
+    public String getEventTitle() {
+        return eventTitle;
+    }
+
+    public void setEventTitle(String eventTitle) {
+        this.eventTitle = eventTitle;
+    }
     
+    public String getUserEmail() {
+        return userEmail;
+    }
+
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
+    }
+
+    public String getEventVenue() {
+        return eventVenue;
+    }
+
+    public void setEventVenue(String eventVenue) {
+        this.eventVenue = eventVenue;
+    }
+    
+    public EventStatus getEventStatus() {
+        return eventStatus;
+    }
+
+    public void setEventStatus(EventStatus eventStatus) {
+        this.eventStatus = eventStatus;
+    }
 }
