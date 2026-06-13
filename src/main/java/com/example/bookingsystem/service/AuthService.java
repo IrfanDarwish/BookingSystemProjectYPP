@@ -39,6 +39,21 @@ public class AuthService {
         userRepository.save(user);
     }
 
+    public void registerAdmin(RegisterRequest regRequest) {
+        if (userRepository.findByEmail(regRequest.getEmail()).isPresent()) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Email already in use");
+        }
+
+        User user = new User(
+            regRequest.getFullName(),
+            regRequest.getEmail(),
+            passwordEncoder.encode(regRequest.getPassword()),
+            Role.ADMIN
+        );
+        
+        userRepository.save(user);
+    }
+
 
     public AuthResponse loginUser(LoginRequest logRequest) {
         User user = userRepository.findByEmail(logRequest.getEmail())
