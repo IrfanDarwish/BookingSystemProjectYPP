@@ -1,62 +1,38 @@
-package com.example.bookingsystem.model;
+package com.example.bookingsystem.dto;
 
 import java.time.Instant;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.Indexed;
-import org.springframework.data.mongodb.core.mapping.Document;
+import com.example.bookingsystem.model.Event;
+import com.example.bookingsystem.model.EventStatus;
 
-import jakarta.validation.constraints.Min;
-
-@Document(collection = "events")
-public class Event {
-    
-    @Id
+public class EventResponse {
     private String id;
-
-    @Indexed
     private String title;
-    
-    @Indexed
     private String description;
-
-    @Indexed
     private String category;
-
-    @Indexed
     private String venue;
-
-    @Indexed
     private LocalDateTime eventDate;
-
-    @Min(1)
     private Double price;
-
-    @Min(1)
     private Integer capacity;
-
     private Integer seatsAvailable;
-
-    @Indexed
     private EventStatus status;
-
     private Instant createdAt;
-    
-    public Event() {}
 
-    public Event(String title, String description, String category, String venue, LocalDateTime eventDate, Double price, Integer capacity, Integer seatsAvailable, EventStatus status) {
-        this.title = title;
-        this.description = description;
-        this.category = category;
-        this.venue = venue;
-        this.eventDate = eventDate;
-        this.price = price;
-        this.capacity = capacity;
-        this.seatsAvailable = seatsAvailable;
-        this.status = status;
-        this.createdAt = Instant.now();
+    public EventResponse() {}
+
+    public EventResponse(Event event) {
+        this.id = event.getId();
+        this.title = event.getTitle();
+        this.description = event.getDescription();
+        this.category = event.getCategory();
+        this.venue = event.getVenue();
+        this.eventDate = event.getEventDate();
+        this.price = event.getPrice();
+        this.capacity = event.getCapacity();
+        this.seatsAvailable = event.getSeatsAvailable();
+        this.status = event.getStatus();
+        this.createdAt = event.getCreatedAt();
     }
 
     public String getId() {
@@ -141,28 +117,5 @@ public class Event {
 
     public Instant getCreatedAt() {
         return createdAt;
-    } 
-
-    public void setCreatedAt(Instant createdAt) {
-        this.createdAt = createdAt;
     }
-
-    public void updateStatusBasedOnDate() {
-        if (this.status == EventStatus.CANCELLED) {
-            return;
-        }
-
-        LocalDate eventDay = eventDate.toLocalDate();
-        LocalDate today = LocalDate.now();
-
-        if (eventDay.isAfter(today)) {
-            this.status = EventStatus.UPCOMING;
-        }else if (eventDay.equals(today)) {
-            this.status = EventStatus.ACTIVE;
-        }else {
-            this.status = EventStatus.COMPLETED;
-        }
-    }
-
-    
 }
