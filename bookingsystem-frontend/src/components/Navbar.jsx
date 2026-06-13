@@ -21,8 +21,15 @@ function Navbar() {
             <div className="nav-container">
                 <div className="nav-brand">Booking Event System</div>
                 <div className="nav-menu">
+                    {!token && <Link to="/">Home</Link>}
                     <Link to="/events">Events</Link>
-                    <Link to="/dashboard">Dashboard</Link>
+                    {token && (
+                        role === 'ADMIN' ? (
+                            <Link to="/admin-dashboard">Admin Dashboard</Link>
+                        ) : (
+                            <Link to="/my-bookings">My Bookings</Link>
+                        )
+                    )}
                     {token ? (
                         <button onClick={handleLogout}>Logout</button>
                     ) : (
