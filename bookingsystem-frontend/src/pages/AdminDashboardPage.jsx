@@ -37,10 +37,6 @@ function AdminDashboardPage() {
                 totalUsers: dashboardSummary.totalUsers
             })
 
-            console.log("dashboardSummary",dashboardSummary);
-            console.log("recentBookings",recentBookings);
-
-
         } catch (err) {
             console.error(err);
         }

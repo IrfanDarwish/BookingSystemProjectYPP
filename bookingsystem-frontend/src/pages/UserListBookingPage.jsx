@@ -17,7 +17,6 @@ function UserListBookingPage() {
             try {
                 setLoading(true);
                 const data = await getMyBookings();
-                console.log("data",data);
                 setBookings(data);
             } catch (err) {
                 console.error(err);
