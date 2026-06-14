@@ -104,11 +104,6 @@ http://localhost:5173
 npm run build
 ```
 
-Development build
-```bash
-npm run dev
-```
-
 ---
 
 # Authentication Flow
