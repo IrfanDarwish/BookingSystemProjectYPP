@@ -17,10 +17,11 @@ public class BookingResponse {
     private String userEmail;
     private String eventVenue;
     private EventStatus eventStatus;
+    private LocalDateTime eventDate;
 
     public BookingResponse() {}
 
-    public BookingResponse(String bookingId, String eventId, String eventTitle , Integer numberOfSeats, Double totalPrice, LocalDateTime bookingDate, BookingStatus bookingStatus, String userEmail, String eventVenue, EventStatus eventStatus) {
+    public BookingResponse(String bookingId, String eventId, String eventTitle , Integer numberOfSeats, Double totalPrice, LocalDateTime bookingDate, BookingStatus bookingStatus, String userEmail, String eventVenue, EventStatus eventStatus, LocalDateTime eventDate) {
         this.bookingId = bookingId;
         this.eventId = eventId;
         this.numberOfSeats = numberOfSeats;
@@ -31,6 +32,7 @@ public class BookingResponse {
         this.eventTitle = eventTitle;
         this.eventVenue = eventVenue;
         this.eventStatus = eventStatus;
+        this.eventDate = eventDate;
     }
 
     public String getBookingId() {
@@ -111,5 +113,13 @@ public class BookingResponse {
 
     public void setEventStatus(EventStatus eventStatus) {
         this.eventStatus = eventStatus;
+    }
+
+    public LocalDateTime getEventDate() {
+        return eventDate;
+    }
+
+    public void setEventDate(LocalDateTime eventDate) {
+        this.eventDate = eventDate;
     }
 }

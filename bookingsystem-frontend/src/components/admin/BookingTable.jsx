@@ -15,26 +15,28 @@ function BookingTable({ bookings }) {
         <table className="booking-table">
             <thead>
             <tr>
+                <th>Booking Date</th>
                 <th>User Email</th>
                 <th>Event</th>
                 <th>Seats</th>
                 <th>Total Price</th>
-                <th>Date</th>
                 <th>Booking Status</th>
                 <th>Event Status</th>
+                <th>Event Date</th>
             </tr>
             </thead>
 
             <tbody>
             {bookings.map((b) => (
                 <tr key={b.bookingId}>
+                <td>{formatDate(b.bookingDate)}</td>
                 <td>{b.userEmail}</td>
                 <td>{b.eventTitle || "Event Deleted"}</td>
                 <td>{b.numberOfSeats}</td>
                 <td>{b.totalPrice}</td>
-                <td>{formatDate(b.bookingDate)}</td>
                 <td>{b.bookingStatus}</td>
                 <td>{b.eventStatus}</td>
+                <td>{formatDate(b.eventDate)}</td>
                 </tr>
             ))}
             </tbody>

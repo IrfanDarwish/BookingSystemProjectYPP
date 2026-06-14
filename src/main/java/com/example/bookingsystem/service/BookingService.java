@@ -76,7 +76,8 @@ public class BookingService {
             savedBooking.getBookingStatus(),
             user.getEmail(),
             event.getVenue(),
-            event.getStatus()
+            event.getStatus(),
+            event.getEventDate()
         );
     }
 
@@ -100,7 +101,8 @@ public class BookingService {
                     booking.getBookingStatus(),
                     user.getEmail(),
                     event != null ? event.getVenue() : null,
-                    event != null ? event.getStatus() : null
+                    event != null ? event.getStatus() : null,
+                    event != null ? event.getEventDate() : null
                 );
             })
             .toList();
@@ -139,7 +141,8 @@ public class BookingService {
             booking.getBookingStatus(),
             user.getEmail(),
             event.getVenue(),
-            event.getStatus()
+            event.getStatus(),
+            event.getEventDate()
         );
     }
 
@@ -165,7 +168,8 @@ public class BookingService {
                         booking.getBookingStatus(),
                         bookingUser != null ? bookingUser.getEmail() : "Unknown",
                         event != null ? event.getVenue() : null,
-                        event != null ? event.getStatus() : null
+                        event != null ? event.getStatus() : null,
+                        event != null ? event.getEventDate() : null
                     );
                 })
                 .toList();
@@ -238,7 +242,8 @@ public class BookingService {
                     booking.getBookingStatus(),
                     bookingUser != null ? bookingUser.getEmail() : "Unknown",
                     event != null ? event.getVenue() : null,
-                    event != null ? event.getStatus() : null
+                    event != null ? event.getStatus() : null,
+                    event != null ? event.getEventDate() : null
                 );
             })
             .toList();
