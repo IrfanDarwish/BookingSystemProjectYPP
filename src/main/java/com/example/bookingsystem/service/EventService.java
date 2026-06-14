@@ -1,6 +1,7 @@
 package com.example.bookingsystem.service;
 
 import java.time.Instant;
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -77,11 +78,21 @@ public class EventService {
             event.setEventDate(request.getEventDate());
             event.setPrice(request.getPrice());
             event.setCapacity(request.getCapacity());
-            event.setStatus(request.getStatus());
             event.setCreatedAt(Instant.now());
             event.setSeatsAvailable(
                     request.getCapacity() != null ? request.getCapacity() : 0
             );
+
+            LocalDate eventDate = request.getEventDate().toLocalDate();
+            
+            if(eventDate.isBefore(LocalDate.now())) {
+                event.setStatus(EventStatus.COMPLETED);
+            } else if (eventDate.isAfter(LocalDate.now())) {
+                event.setStatus(EventStatus.UPCOMING);
+            } else {
+                event.setStatus(EventStatus.ACTIVE);
+            }
+
             return event;
         }).toList();
 
