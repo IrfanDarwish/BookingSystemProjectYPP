@@ -1,4 +1,5 @@
-const API_BOOKING_URL = 'http://localhost:8080/api/bookings';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api';
+const API_BOOKING_URL = `${API_BASE_URL}/bookings`;
 
 export async function createBooking(booking) {
     const token = localStorage.getItem('token');

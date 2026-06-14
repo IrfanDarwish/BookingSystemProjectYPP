@@ -1,4 +1,5 @@
-const API_EVENT_URL = 'http://localhost:8080/api/events';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api';
+const API_EVENT_URL = `${API_BASE_URL}/events`;
 
 export async function getAllEvents(page = 0, size = 20, search = '') {
     const params = new URLSearchParams({
