@@ -167,6 +167,20 @@
 }
 
 /* =========================
+   USER BUTTONS CONTAINER
+========================= */
+
+.user-buttons {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.user-buttons button {
+    flex: 1;
+}
+
+/* =========================
    REGISTER BUTTON (PURPLE)
 ========================= */
 
@@ -201,30 +215,31 @@
     color: white;
 }
 
-.back-btn {
+.back-btn-details {
     width: 100%;
     padding: 16px;
-    border: none;
+    border: 2px solid rgba(255,255,255,0.3);
     border-radius: 12px;
+    background: gray;
+    color: white;
     font-size: 18px;
     font-weight: 600;
     cursor: pointer;
-    transition: 0.2s ease;
+    transition: all 0.25s ease;
 }
 
-.back-btn:hover {
-    background-color: #f2f2f2;
-    border-color: #999;
-    transform: translateY(-1px);
+.back-btn-details:hover {
+    background: rgba(255,255,255,0.15);
+    transform: translateY(-2px);
 }
 
-.back-btn:active {
-    transform: translateY(0px);
+.back-btn-details:active {
+    transform: translateY(0);
 }
 
-.back-btn:focus {
+.back-btn-details:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
 }
 
 /* =========================

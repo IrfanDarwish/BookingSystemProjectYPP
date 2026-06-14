@@ -129,19 +129,21 @@ function EventDetailsPage(){
                 </>
             ) : ( 
                 <>
-                
-                <button 
-                    className="register-btn" 
-                    onClick={handleRegister}
-                    disabled={isNotBookable}
-                    >{isNotBookable ? "Unavailable" : "Register Now"}
+                <div className="user-buttons">
+                    <button 
+                        className="register-btn" 
+                        onClick={handleRegister}
+                        disabled={isNotBookable}
+                        >
+                        {isNotBookable ? "Unavailable" : "Register Now"}
                     </button>
                     <button
-                    className="back-btn"
-                    onClick={() => navigate(-1)}
-                    >
-                    ← Back
+                        className="back-btn-details"
+                        onClick={() => navigate('/events')}
+                        >
+                        ← Back
                     </button>
+                </div>
                 </>
             )}
         </div>
