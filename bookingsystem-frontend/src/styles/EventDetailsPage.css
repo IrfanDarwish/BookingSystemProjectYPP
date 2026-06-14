@@ -201,6 +201,32 @@
     color: white;
 }
 
+.back-btn {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.back-btn:hover {
+    background-color: #f2f2f2;
+    border-color: #999;
+    transform: translateY(-1px);
+}
+
+.back-btn:active {
+    transform: translateY(0px);
+}
+
+.back-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
 /* =========================
    ADMIN BUTTONS CONTAINER
 ========================= */

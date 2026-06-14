@@ -50,8 +50,17 @@ function LoginPage() {
                                     {loading ? 'Logging in...' : 'Login'}
                                 </button>
                             </div>
-                        </form>
-                    
+                    </form>
+                    <div 
+                        className="login-card-footer" 
+                        onClick={() => navigate('/register')}
+                        style={{
+                            cursor: "pointer",
+                            textdecoration: "underline",
+                            color: "#007BFF"
+                        }}
+                        >Join Us Now
+                    </div>
                 </div>
             </div>
         </div>

@@ -127,12 +127,22 @@ function EventDetailsPage(){
                     <button className="delete-btn" onClick={() => handleDeleteEvent(event.id)}>Delete Event</button>
                 </div>
                 </>
-            ) : ( <button 
+            ) : ( 
+                <>
+                
+                <button 
                     className="register-btn" 
                     onClick={handleRegister}
                     disabled={isNotBookable}
                     >{isNotBookable ? "Unavailable" : "Register Now"}
                     </button>
+                    <button
+                    className="back-btn"
+                    onClick={() => navigate(-1)}
+                    >
+                    ← Back
+                    </button>
+                </>
             )}
         </div>
     )
